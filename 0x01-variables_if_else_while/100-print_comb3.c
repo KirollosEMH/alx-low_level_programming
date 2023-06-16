@@ -12,9 +12,9 @@ int main(void)
 
 	while (first_digit < 57)
 	{
+		second_digit = first_digit + 1;
 		while (second_digit < 58)
 		{
-			second_digit = first_digit + 1;
 			putchar(first_digit);
 			putchar(second_digit);
 			if (!(first_digit == 56 && second_digit == 57))
