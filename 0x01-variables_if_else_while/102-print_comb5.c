@@ -1,49 +1,40 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * main - Entry point
- * Print all possible combinations of two two-digit numbers
- * Return: Always 0 (Success)
+ * main - Entry Point
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
+
 int main(void)
 {
-	int digit1_1 = 48, digit1_2 = 48, digit2_1, digit2_2, temp;
+	int firstDigit = 0, seconDigit;
 
-	while (digit1_1 <= 57)
+	while (firstDigit <= 99)
 	{
-		while (digit1_2 <= 57)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			digit2_1 = digit1_1;
-			while (digit2_1 <= 57)
+			if (seconDigit != firstDigit)
 			{
-				if (digit2_1 == digit1_1)
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
 				{
-					temp = digit1_2 + 1;
-				} else
-				{
-					temp = 48;
-				}
-				digit2_2 = temp;
-				while (digit2_2 <= 57)
-				{
-					putchar(digit1_1);
-					putchar(digit1_2);
+					putchar(',');
 					putchar(' ');
-					putchar(digit2_1);
-					putchar(digit2_2);
-					if (digit1_1 + digit1_2 + digit2_1 + digit2_2 != 227)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					digit2_2++;
 				}
-				digit2_1++;
 			}
-			digit1_2++;
+			seconDigit++;
 		}
-		digit1_1++;
+		firstDigit++;
 	}
 	putchar('\n');
+
 	return (0);
 }
