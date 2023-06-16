@@ -11,7 +11,7 @@ int main(void)
 
 	while (digit1_1 <= 57)
 	{
-		while (digit1_2 <= 56)
+		while (digit1_2 <= 57)
 		{
 			digit2_1 = digit1_1;
 			while (digit2_1 <= 57)
